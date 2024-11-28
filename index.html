@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function alertbutton() {
+        alert("Of course I will come see you!!");
+        console.log(Hello);
+      }
+      function displayMessage() {
+        var message =
+          "Of course I will come see you!!";
+        document.getElementById("p2").innerHTML = message;
+      }
+      function toggle() {
+        var x = document.getElementById("p3");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      function changeSrc() {
+        document.getElementById("techsupport").src = "images/hacker.jpg";
+      }
+      function changeText(elem) {
+        elem.innerHTML = "Hello World";
+      }
+      function fieldRequired() {
+        let x = document.getElementById("fname");
+        if (x.value == "") {
+          x.value = "This field is required";
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #bf326d;
+      }
+
+      h1 {
+        color: red;
+        margin-left: 0px;
+        font-size: 50px;
+        text-align: center;
+      }
+
+      p {
+        color: red;
+        margin-left: 0px;
+        font-size: 25px;
+        text-align: center;
+      }
+
+      .p2 {
+        color: rgb(0, 38, 255);
+        margin-left: 0px;
+        font-size: 25px;
+        text-align: center;
+      }
+
+      .p3 {
+        text-align: right;
+      }
+
+      form {
+        color: red;
+        margin-left: 0px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      a {
+        color: green;
+        margin-left: 0px;
+        font-size: 25px;
+      }
+    </style>
+    <title>BUBEMEDIA</title>
+  </head>
+  <body>
+    <h1>Pookie's Web Page</h1>
+    <p>
+      Custom made for my honeybun<br /> <br />
+      <img
+        align="center"
+        id="techsupport"
+        src="images/Taylor.png"
+        alt="Italian Trulli"
+      />
+    <p>
+      <br />
+      <button onclick="alertbutton()">Click here!!!</button>
+    </p>
+  </body>
+</html>
