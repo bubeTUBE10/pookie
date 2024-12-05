@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Love Express</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf6e3;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcb77;
+            color: #fff;
+        }
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ffb347;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #ff9e3d;
+        }
+        .form-section {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Boba Love Express</h1>
+        <p>Order your favorite boba tea, and I'll deliver it to you! ❤️</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Place Your Order</h2>
+        <form>
+            <!-- Tea Selection -->
+            <div class="form-section">
+                <label for="tea">Choose your tea:</label>
+                <select id="tea" name="tea">
+                    <option value="milk-tea">Milk Tea</option>
+                    <option value="green-tea">Green Tea</option>
+                    <option value="fruit-tea">Fruit Tea</option>
+                </select>
+            </div>
+
+            <!-- Flavor Selection -->
+            <div class="form-section">
+                <label for="flavor">Choose a flavor:</label>
+                <select id="flavor" name="flavor">
+                    <option value="taro">Taro</option>
+                    <option value="matcha">Matcha</option>
+                    <option value="mango">Mango</option>
+                    <option value="lychee">Lychee</option>
+                </select>
+            </div>
+
+            <!-- Toppings -->
+            <div class="form-section">
+                <label>Toppings:</label><br>
+                <input type="checkbox" id="tapioca" name="toppings" value="tapioca">
+                <label for="tapioca">Tapioca Pearls</label><br>
+                <input type="checkbox" id="jelly" name="toppings" value="jelly">
+                <label for="jelly">Jelly</label><br>
+                <input type="checkbox" id="pudding" name="toppings" value="pudding">
+                <label for="pudding">Pudding</label>
+            </div>
+
+            <!-- Sweetness Level -->
+            <div class="form-section">
+                <label for="sweetness">Sweetness Level:</label>
+                <input type="range" id="sweetness" name="sweetness" min="0" max="100" step="25" value="50">
+                <span id="sweetness-level">50%</span>
+            </div>
+
+            <!-- Ice Level -->
+            <div class="form-section">
+                <label for="ice">Ice Level:</label>
+                <select id="ice" name="ice">
+                    <option value="no-ice">No Ice</option>
+                    <option value="less-ice">Less Ice</option>
+                    <option value="regular-ice">Regular Ice</option>
+                    <option value="extra-ice">Extra Ice</option>
+                </select>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-section">
+                <label for="requests">Special Requests:</label>
+                <textarea id="requests" name="requests" rows="4" placeholder="Anything special you'd like?"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Place My Order!</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by [Your Name]</p>
+    </footer>
+
+    <script>
+        // Update sweetness level text
+        const sweetnessSlider = document.getElementById('sweetness');
+        const sweetnessLevel = document.getElementById('sweetness-level');
+        sweetnessSlider.addEventListener('input', () => {
+            sweetnessLevel.textContent = `${sweetnessSlider.value}%`;
+        });
+    </script>
+</body>
+</html>
