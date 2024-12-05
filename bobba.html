@@ -44,7 +44,13 @@
             margin-bottom: 15px;
         }
 
-        /* From Uiverse.io by akshat-patel28 */ 
+        .center-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh; /* Adjust height to control centering within the viewport */
+        }
+
         .button-container {
         display: flex;
         background-color: rgba(245, 73, 144);
@@ -88,11 +94,13 @@
     <header>
         <h1>Boba Love Express</h1>
         <p>Order your favorite boba tea, and I'll deliver it to you! ❤️</p>
-    <div class="button-container">
-        <a href="index.html" class="buttons">
-            <i class="fa fa-home"></i>
-        </a>
-        <button class="buttons"><i class="fa fa-shopping-cart"></i></button>
+    <div class="center-wrapper">
+        <div class="button-container">
+            <a href="index.html" class="buttons">
+                <i class="fa fa-home"></i>
+            </a>
+            <button class="buttons"><i class="fa fa-shopping-cart"></i></button>
+        </div>
     </div>
     </header>
 
