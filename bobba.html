@@ -44,6 +44,17 @@
             margin-bottom: 15px;
         }
 
+        .menu-container {
+            display: flex;
+            gap: 20px; /* Adjust the gap between the two menus */
+            align-items: flex-start; /* Align the top of the menus */
+            margin-bottom: 15px; /* Add space below the container */
+        }
+
+        .menu-container .form-section {
+            flex: 1; /* Optional: Allows menus to grow/shrink equally */
+        }
+        
         /* Homepage and shopping cart button */
         .center-wrapper {
         display: flex;
@@ -95,7 +106,6 @@
         transition: 300ms;
         color: white;
         overflow: hidden;
-        justify-content: center;
         }
 
         .selected {
@@ -208,6 +218,7 @@
     <main>
         <h2>Place Your Order</h2>
         <form>
+            <div class="menu-container">
             <!-- Tea Selection -->
             <div class="form-section">
                 <label for="tea">Choose your tea:</label>
@@ -266,6 +277,7 @@
                     <option value="mango">Mango</option>
                     <option value="lychee">Lychee</option>
                 </select>
+            </div>
             </div>
 
             <!-- Toppings -->
