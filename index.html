@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <script>
       function alertbutton() {
         alert("Of course I will come see you!!");
-        console.log(Hello);
       }
       function displayMessage() {
-        var message =
-          "Of course I will come see you!!";
+        var message = "Of course I will come see you!!";
         document.getElementById("p2").innerHTML = message;
       }
-      
+
       function changeSrc() {
         document.getElementById("techsupport").src = "images/hacker.jpg";
       }
@@ -50,13 +49,16 @@
   <body>
     <h1>Pookie's Web Page</h1>
     <p>
-      Custom made for my honeybun<br /> <br />
+      Custom made for my honeybun<br />
+      <br />
       <img
         align="center"
         id="techsupport"
         src="images/Taylor.png"
         alt="Italian Trulli"
       />
+    </p>
+
     <p>
       <br />
       <button onclick="alertbutton()">Click here!!!</button>
