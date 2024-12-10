@@ -72,6 +72,13 @@
             echo "<p><strong>Ice Level:</strong> $ice</p>";
             echo "<p><strong>Special Requests:</strong> $requests</p>";
             ?>
+            <?php
+            // Display all received form data for debugging
+            echo '<pre>';
+            print_r($_GET);
+            echo '</pre>';
+            exit;
+            ?>
         </div>
     </main>
 
