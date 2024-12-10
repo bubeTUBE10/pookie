@@ -4,7 +4,7 @@
 <head>
     <title></title>
     <?php
-        $tea = htmlspecialchars($_GET["tea"]);
+        $tea = htmlspecialchars($_GET["option-tea"]);
         $lname = htmlspecialchars($_GET["lname"]);
         $phone = htmlspecialchars($_GET["phone"]);
         $country = htmlspecialchars($_GET["country"]);
