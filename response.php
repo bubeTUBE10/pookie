@@ -4,7 +4,7 @@
 <head>
     <title></title>
     <?php
-        $fname = htmlspecialchars($_GET["fname"]);
+        $tea = htmlspecialchars($_GET["tea"]);
         $lname = htmlspecialchars($_GET["lname"]);
         $phone = htmlspecialchars($_GET["phone"]);
         $country = htmlspecialchars($_GET["country"]);
@@ -31,7 +31,7 @@
         echo $result ? "Success!" : "Failure: " . mysqli_error($conn);
     ?>
 
-    Data submitted to FBI
+    You selected tea <?= $tea ?>.<br/>
 
 </body>
 </html>
