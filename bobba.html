@@ -197,6 +197,19 @@
         content: attr(data-three);
         }
 
+        .select:has(.options input[type="radio"]#all:checked) .selected::before {
+        content: attr(data-default);
+        }
+        .select:has(.options input[type="radio"]#milk-tea:checked) .selected::before {
+        content: attr(data-one);
+        }
+        .select:has(.options input[type="radio"]#green-tea:checked) .selected::before {
+        content: attr(data-two);
+        }
+        .select:has(.options input[type="radio"]#fruit-tea:checked) .selected::before {
+        content: attr(data-three);
+        }
+
     </style>
 </head>
 <body>
@@ -296,15 +309,15 @@
                     </div>
                     <div title="milk-tea">
                     <input id="milk-tea" name="option" type="radio" />
-                    <label class="option" for="milk-tea" data-txt="milk-tea"></label>
+                    <label class="option" for="milk-tea" data-txt="Milk Tea"></label>
                     </div>
                     <div title="green-tea">
                     <input id="green-tea" name="option" type="radio" />
-                    <label class="option" for="green-tea" data-txt="green-tea"></label>
+                    <label class="option" for="green-tea" data-txt="Green Tea"></label>
                     </div>
                     <div title="fruit-tea">
                     <input id="fruit-tea" name="option" type="radio" />
-                    <label class="option" for="fruit-tea" data-txt="fruit-tea"></label>
+                    <label class="option" for="fruit-tea" data-txt="Fruit Tea"></label>
                     </div>
                 </div>
                 </div>
