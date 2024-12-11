@@ -5,13 +5,12 @@
     <title>SQL test</title>
     <?php
         //$brand = htmlspecialchars($_GET["brand"]);
-        $server = "192.168.0.13";
-        $port = "3307";
+        $server = "127.0.0.1";
+        $port = "3306";
         $username = "root";
         $password = "phpPHP";
         $database = "pookie";
         $conn = mysqli_connect($server, $username, $password, $database, $port);
-        
         // Check for successful connection
         if (!$conn) {
           die("Connection failed: " . mysqli_connect_error());
@@ -19,7 +18,7 @@
 
         // Prepare and execute the SQL query
         //$sql = "INSERT INTO car_brands(company) VALUES ('$brand');";  // Ensure the variable is properly quoted
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn);
     ?>
 </head>
 
