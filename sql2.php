@@ -6,7 +6,7 @@
     <?php
         //$brand = htmlspecialchars($_GET["brand"]);
         $server = "localhost";
-        $port = "3307"
+        $port = "3307";
         $username = "root";
         $password = "phpPHP";
         $database = "pookie";
