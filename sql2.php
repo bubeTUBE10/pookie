@@ -10,7 +10,7 @@
         $username = "root";
         $password = "phpPHP";
         $database = "pookie";
-        $conn = mysql_connect($server, $username, $password, $database, $port);
+        $conn = mysqli_connect($server, $username, $password, $database, $port);
         
         // Check for successful connection
         if (!$conn) {
