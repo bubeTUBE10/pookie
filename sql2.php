@@ -11,21 +11,18 @@
         $password = "phpPHP";
         $database = "pookie";
         $conn = mysqli_connect($server, $username, $password, $database, $port);
-        // Check for successful connection
-        if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
-        }
-
-        // Prepare and execute the SQL query
-        //$sql = "INSERT INTO car_brands(company) VALUES ('$brand');";  // Ensure the variable is properly quoted
-        $result = mysqli_query($conn);
-    ?>
+        ?>
 </head>
 
 <body>
 
     <?php
-        echo $result ? "Success!" : "Failure: " . mysqli_error($conn);
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                    }
+                    echo "Connected successfully to the MySQL server";
+                    $conn->close();
     ?>
 
 </body>
