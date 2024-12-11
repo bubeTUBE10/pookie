@@ -5,7 +5,7 @@
     <title>SQL test</title>
     <?php
         //$brand = htmlspecialchars($_GET["brand"]);
-        $server = "127.0.0.1";
+        $server = "192.168.0.13";
         $port = "3307";
         $username = "root";
         $password = "phpPHP";
