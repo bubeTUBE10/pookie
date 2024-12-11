@@ -4,12 +4,13 @@
 <head>
     <title>SQL test</title>
     <?php
-        $brand = htmlspecialchars($_GET["brand"]);
+        //$brand = htmlspecialchars($_GET["brand"]);
         $server = "localhost";
-        $username = "php";
-        $password = "hello";
-        $database = "bubemedia";
-        $conn = mysqli_connect($server, $username, $password, $database);
+        $port = "3307"
+        $username = "root";
+        $password = "phpPHP";
+        $database = "pookie";
+        $conn = mysqli_connect($server, $username, $password, $database, $port);
         
         // Check for successful connection
         if (!$conn) {
@@ -17,13 +18,12 @@
         }
 
         // Prepare and execute the SQL query
-        $sql = "INSERT INTO car_brands(company) VALUES ('$brand');";  // Ensure the variable is properly quoted
+        //$sql = "INSERT INTO car_brands(company) VALUES ('$brand');";  // Ensure the variable is properly quoted
         $result = mysqli_query($conn, $sql);
     ?>
 </head>
 
 <body>
-    You selected brand <?= $brand ?>.<br/>
 
     <?php
         echo $result ? "Success!" : "Failure: " . mysqli_error($conn);
