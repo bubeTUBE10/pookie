@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    You selected day <?= $day ?>.<br/>
+    You selected day <?= $day ?>.<br />
 
     <?php
     if ($stmt->execute() === TRUE) {
@@ -45,4 +45,5 @@
     ?>
 
 </body>
+
 </html>
