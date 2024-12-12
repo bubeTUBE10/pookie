@@ -49,6 +49,8 @@
         echo "No results found.";
     }
 
+    echo "You selected {$row['tea']} tea";
+
     // Close the connection
     mysqli_close($conn);
     ?>
