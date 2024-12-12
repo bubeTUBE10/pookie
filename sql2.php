@@ -42,6 +42,7 @@
                 echo "<td>" . htmlspecialchars($value) . "</td>";
             }
             echo "</tr>";
+            $lastTea = $row['tea']; // Save the value of 'tea' in the last iteration
         }
 
         echo "</table>";
@@ -49,7 +50,7 @@
         echo "No results found.";
     }
 
-    echo "You selected {$row['tea']} tea";
+    echo "You selected {$lastTea} tea";
 
     // Close the connection
     mysqli_close($conn);
