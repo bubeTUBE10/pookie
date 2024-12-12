@@ -59,7 +59,7 @@
         while ($row = mysqli_fetch_assoc($result)) {
             $tea = $row['tea'];
             $flavor = $row['flavor'];
-            $toppings = $row['topping']; // Assuming 'topping' is the correct column name
+            $toppings = $row['toppings']; // Assuming 'topping' is the correct column name
             $sweetness = $row['sweetness'];
             $ice = $row['ice'];
             $requests = $row['requests'];
