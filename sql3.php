@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
         <?php
-        //$brand = htmlspecialchars($_GET["brand"]);
         $server = "127.0.0.1";
         $port = "3306";
         $username = "root";
