@@ -1,387 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boba Love Express</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fdf6e3;
-        }
-        header, footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #000000;
-            color: #fff;
-        }
-        main {
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ee58ff;/*rgba(245, 73, 144);*/
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            color: #fff;
-        }
-        button {
-            background-color: #ffb347;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #ff9e3d;
-        }
-        .form-section {
-            margin-bottom: 15px;
-        }
-
-        .menu-container {
-            display: flex;
-            gap: 20px; /* Adjust the gap between the two menus */
-            align-items: flex-start; /* Align the top of the menus */
-            margin-bottom: 15px; /* Add space below the container */
-        }
-
-        .menu-container .form-section {
-            flex: 1; /* Optional: Allows menus to grow/shrink equally */
-        }
-        
-        /* Homepage and shopping cart button */
-        .center-wrapper {
-        display: flex;
-        justify-content: center;
-        }
-
-        .button-container {
-        display: flex;
-        background-color: rgba(245, 73, 144);
-        width: 125px;
-        height: 40px;
-        align-items: center;
-        justify-content: space-around;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
-                rgba(245, 73, 144, 0.5) 5px 10px 15px;
-        }
-
-        .button-container a, 
-        .button-container .buttons {
-        outline: 0 !important;
-        border: 0 !important;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        transition: all ease-in-out 0.3s;
-        cursor: pointer;
-        }
-
-        .button-container a:hover, 
-        .button-container .buttons:hover {
-        transform: translateY(-3px);
-        }
-
-        .icon {
-        font-size: 20px;
-        }
-
-        /* Dropdown menu */
-        .select {
-        width: fit-content;
-        cursor: pointer;
-        position: relative;
-        transition: 300ms;
-        color: white;
-        overflow: hidden;
-        }
-
-        .selected {
-        background-color: #2a2f3b;
-        padding: 5px;
-        margin-bottom: 3px;
-        border-radius: 5px;
-        position: relative;
-        z-index: 100000;
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        }
-
-        .arrow {
-        position: relative;
-        right: 0px;
-        height: 10px;
-        transform: rotate(-90deg);
-        width: 25px;
-        fill: white;
-        z-index: 100000;
-        transition: 300ms;
-        }
-
-        .options {
-        display: flex;
-        flex-direction: column;
-        border-radius: 5px;
-        padding: 5px;
-        background-color: #2a2f3b;
-        position: relative;
-        top: -100px;
-        opacity: 0;
-        transition: 300ms;
-        }
-
-        .select:hover > .options {
-        opacity: 1;
-        top: 0;
-        }
-
-        .select:hover > .selected .arrow {
-        transform: rotate(0deg);
-        }
-
-        .option {
-        border-radius: 5px;
-        padding: 5px;
-        transition: 300ms;
-        background-color: #2a2f3b;
-        width: 150px;
-        font-size: 15px;
-        }
-        .option:hover {
-        background-color: #323741;
-        }
-
-        .options input[type="radio"] {
-        display: none;
-        }
-
-        .options label {
-        display: inline-block;
-        }
-        .options label::before {
-        content: attr(data-txt);
-        }
-
-        .options input[type="radio"]:checked + label {
-        display: none;
-        }
-
-        .options input[type="radio"]#all:checked + label {
-        display: none;
-        }
-
-        .select:has(.options input[type="radio"]#all:checked) .selected::before {
-        content: attr(data-default);
-        }
-        .select:has(.options input[type="radio"]#milk-tea:checked) .selected::before {
-        content: attr(data-one);
-        }
-        .select:has(.options input[type="radio"]#green-tea:checked) .selected::before {
-        content: attr(data-two);
-        }
-        .select:has(.options input[type="radio"]#fruit-tea:checked) .selected::before {
-        content: attr(data-three);
-        }
-
-        .select:has(.options input[type="radio"]#all:checked) .selected::before {
-        content: attr(data1-default);
-        }
-        .select:has(.options input[type="radio"]#taro:checked) .selected::before {
-        content: attr(data1-one);
-        }
-        .select:has(.options input[type="radio"]#matcha:checked) .selected::before {
-        content: attr(data1-two);
-        }
-        .select:has(.options input[type="radio"]#mango:checked) .selected::before {
-        content: attr(data1-three);
-        }
-        .select:has(.options input[type="radio"]#lychee:checked) .selected::before {
-        content: attr(data1-four);
-        }
-
-    </style>
-</head>
-<body>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <h1>Boba Love Express</h1>
-        <p>Order your favorite boba tea, and I'll deliver it to you! ❤️</p>
-    <div class="center-wrapper">
+      <h1>Boba Love Express</h1>
+      <p>Order your favorite boba tea, and I'll deliver it to you! ❤️</p>
+      <div class="center-wrapper">
         <div class="button-container">
-            <a href="index.html" class="buttons">
-                <i class="fa fa-home"></i>
-            </a>
-            <button class="buttons"><i class="fa fa-shopping-cart"></i></button>
+          <a href="index.html" aria-label="Homepage" class="buttons">
+            <i class="fa fa-home"></i>
+          </a>
+          <a href="response_purejs.html" aria-label="OrderSummary"
+            ><i class="fa fa-shopping-cart"></i
+          ></a>
+          <button id="JSFunction" aria-label="JSFunction" class="buttons">
+            <i class="fa fa-air-freshener"></i>
+          </button>
         </div>
-    </div>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main>
-        <h2>Place Your Order</h2>
-        <form action="response2.php" method="get">
-
-            <div class="menu-container"> <!--To have the two menus side by side-->
-            <!-- Tea Selection -->
-            <div class="form-section">
-                <label for="tea">Choose your tea:</label>
-                    <div class="select">
-                        <div
-                            class="selected"
-                            data-default="All"
-                            data-one="Milk Tea"
-                            data-two="Green Tea"
-                            data-three="Fruit Tea"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                height="1em"
-                                viewBox="0 0 512 512"
-                                class="arrow"
-                            >
-                                <path
-                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
-                                ></path>
-                            </svg>
-                        </div>
-                        <div class="options">
-                            <!--<div title="all">
-                                <input id="all-tea" name="option-tea" type="radio" checked />
-                                <label class="option" for="all-tea" data-txt="All"></label>
-                            </div>-->
-                            <div title="milk-tea">
-                                <input id="milk-tea" name="option-tea" type="radio" value="Milk Tea"/>
-                                <label class="option" for="milk-tea" data-txt="Milk Tea"></label>
-                            </div>
-                            <div title="green-tea">
-                                <input id="green-tea" name="option-tea" type="radio" value="Green Tea"/>
-                                <label class="option" for="green-tea" data-txt="Green Tea"></label>
-                            </div>
-                            <div title="fruit-tea">
-                                <input id="fruit-tea" name="option-tea" type="radio" value="Fruit Tea"/>
-                                <label class="option" for="fruit-tea" data-txt="Fruit Tea"></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            <!-- Flavor Selection -->
-            <div class="form-section">
-                <label for="tea">Choose a flavor:</label>
-                <div class="select">
-                    <div
-                        class="selected"
-                        data1-default="All"
-                        data1-one="Taro"
-                        data1-two="Matcha"
-                        data1-three="Mango"
-                        data1-four="Lychee"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="1em"
-                            viewBox="0 0 512 512"
-                            class="arrow"
-                        >
-                            <path
-                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="options">
-                        <!--<div title="all">
-                            <input id="all-flavor" name="option-flavor" type="radio" checked />
-                            <label class="option" for="all-flavor" data-txt="All"></label>
-                        </div>-->
-                        <div title="taro">
-                            <input id="taro" name="option-flavor" type="radio" value="Taro"/>
-                            <label class="option" for="taro" data-txt="Taro"></label>
-                        </div>
-                        <div title="matcha">
-                            <input id="matcha" name="option-flavor" type="radio" value="Matcha"/>
-                            <label class="option" for="matcha" data-txt="Matcha"></label>
-                        </div>
-                        <div title="mango">
-                            <input id="mango" name="option-flavor" type="radio" value="Mango"/>
-                            <label class="option" for="mango" data-txt="Mango"></label>
-                        </div>
-                        <div title="lychee">
-                            <input id="lychee" name="option-flavor" type="radio" value="Lychee"/>
-                            <label class="option" for="lychee" data-txt="Lychee"></label>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            
-            </div> <!--End of <div class="menu-container">-->
-
-            <!-- Toppings -->
-            <div class="form-section">
-                <label>Toppings:</label><br>
-                <input type="checkbox" id="tapioca" name="toppings" value="tapioca">
-                <label for="tapioca">Tapioca Pearls</label><br>
-                <input type="checkbox" id="jelly" name="toppings" value="jelly">
-                <label for="jelly">Jelly</label><br>
-                <input type="checkbox" id="pudding" name="toppings" value="pudding">
-                <label for="pudding">Pudding</label>
+      <h2>Place Your Order</h2>
+      <form action="response.php" method="post" id="orderForm">
+        <div class="menu-container">
+          <!-- Tea Selection -->
+          <div class="form-section">
+            <label for="tea">Choose your tea:</label>
+            <div class="custom-dropdown" id="tea-dropdown">
+              <div class="selected">Select Tea</div>
+              <div class="options">
+                <div class="option" data-value="milk-tea">Milk Tea</div>
+                <div class="option" data-value="green-tea">Green Tea</div>
+                <div class="option" data-value="fruit-tea">Fruit Tea</div>
+              </div>
+              <select id="tea" name="tea">
+                <option value="milk-tea">Milk Tea</option>
+                <option value="green-tea">Green Tea</option>
+                <option value="fruit-tea">Fruit Tea</option>
+              </select>
             </div>
+          </div>
 
-            <!-- Sweetness Level -->
-            <div class="form-section">
-                <label for="sweetness">Sweetness Level:</label>
-                <input type="range" id="sweetness" name="sweetness" min="0" max="100" step="25" value="50">
-                <span id="sweetness-level">50%</span>
+          <!-- Flavor Selection -->
+          <div class="form-section">
+            <label for="flavor">Choose a flavor:</label>
+            <div class="custom-dropdown" id="flavor-dropdown">
+              <div class="selected">Select Flavor</div>
+              <div class="options">
+                <div class="option" data-value="taro">Taro</div>
+                <div class="option" data-value="matcha">Matcha</div>
+                <div class="option" data-value="mango">Mango</div>
+                <div class="option" data-value="lychee">Lychee</div>
+              </div>
+              <select id="flavor" name="flavor">
+                <option value="taro">Taro</option>
+                <option value="matcha">Matcha</option>
+                <option value="mango">Mango</option>
+                <option value="lychee">Lychee</option>
+              </select>
             </div>
+          </div>
+        </div>
 
-            <!-- Ice Level -->
-            <div class="form-section">
-                <label for="ice">Ice Level:</label>
-                <select id="ice" name="ice">
-                    <option value="no-ice">No Ice</option>
-                    <option value="less-ice">Less Ice</option>
-                    <option value="regular-ice">Regular Ice</option>
-                    <option value="extra-ice">Extra Ice</option>
-                </select>
+        <!-- Toppings -->
+        <label>Toppings:</label>
+        <div id="ToppingsDiv" class="ToppingsDiv"></div>
+
+        <!-- Sweetness Level -->
+        <div class="form-section">
+          <label for="sweetness"></label>
+          <div>
+            <input
+              id="myRange"
+              class="slider"
+              value="0"
+              max="100"
+              min="0"
+              type="range"
+              step="5"
+	      name="sweetness"
+            />
+            <p><output id="Ranger"></output>%</p>
+          </div>
+        </div>
+
+        <!-- Ice Level -->
+        <div class="form-section">
+          <label for="ice">Ice Level:</label>
+          <div class="custom-dropdown" id="ice-dropdown">
+            <div class="selected">Select Ice Level</div>
+            <div class="options">
+              <div class="option" data-value="no-ice">No Ice</div>
+              <div class="option" data-value="less-ice">Less Ice</div>
+              <div class="option" data-value="regular-ice">Regular Ice</div>
+              <div class="option" data-value="extra-ice">Extra Ice</div>
             </div>
+            <select id="ice" name="ice">
+              <option value="no-ice">No Ice</option>
+              <option value="less-ice">Less Ice</option>
+              <option value="regular-ice">Regular Ice</option>
+              <option value="extra-ice">Extra Ice</option>
+            </select>
+          </div>
+        </div>
 
-            <!-- Special Requests -->
-            <div class="form-section">
-                <label for="requests">Special Requests:</label>
-                <textarea id="requests" name="requests" rows="4" placeholder="Anything special you'd like?"></textarea>
-            </div>
+        <!-- Special Requests -->
+        <div class="form-section">
+          <label for="requests">Special Requests:</label>
+          <textarea
+            id="request"
+            name="request"
+            rows="3"
+            placeholder="Anything special you'd like?"
+          ></textarea>
+        </div>
 
-            <!-- Submit Button -->
-            <button type="submit" value="Submit" >Place My Order!</button>
-        </form>
+        <!-- Submit Button -->
+        <button type="submit">
+          <span class="button_top">Place your order!!</span>
+        </button>
+      </form>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>Made with ❤️ by [Your Name]</p>
+      <p>
+        Made with ❤️ by
+        <a href="rubenpookster.html">BubeTube</a>
+      </p>
     </footer>
-
-    <script>
-        // Update sweetness level text
-        const sweetnessSlider = document.getElementById('sweetness');
-        const sweetnessLevel = document.getElementById('sweetness-level');
-        sweetnessSlider.addEventListener('input', () => {
-            sweetnessLevel.textContent = `${sweetnessSlider.value}%`;
-        });
-    </script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
